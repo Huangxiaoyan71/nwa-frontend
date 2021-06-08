@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <header class="header">
+    <header class="header sticky">
       <div class="container">
         <div class="left">
           <a href="/" class="home-link active"><img src="/img/logo.svg" alt="Nichlas W. Andersen" class="logo" /></a>
@@ -12,6 +12,12 @@
       </div>
     </header>
     <slot/>
+    <!-- 页尾 -->
+    <footer class="footer">
+      <div class="container">
+        <span>Copyright © 2021</span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -30,23 +36,51 @@ body {
   padding:0;
   line-height: 1.5;
 }
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
+.container {
+  max-width: 1200px;
+  margin: 0 30.5px;
+  padding: 0 6rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+  justify-content: space-between;
+  height: 100%;
 }
-
-.nav__link {
-  margin-left: 20px;
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header {
+  height: 6rem;
+  z-index: 10;
+}
+.nav {
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  transition: border .15s;
+}
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  margin: 4px 0 0 48px;
+}
+.home-link {
+  text-decoration: none;
+}
+.logo {
+  height: 1.5rem;
+}
+img {
+  max-width: 100%;
+}
+.footer {
+  font-size: .8rem;
+  padding: 6rem 0;
 }
 </style>
