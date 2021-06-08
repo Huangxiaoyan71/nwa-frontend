@@ -3,11 +3,13 @@
     <header class="header sticky">
       <div class="container">
         <div class="left">
-          <a href="/" class="home-link active"><img src="/img/logo.svg" alt="Nichlas W. Andersen" class="logo" /></a>
+          <g-link to="/" class="home-link" exact>
+            <img src="/img/logo.svg" alt="Nichlas W. Andersen" class="logo" />
+          </g-link>
         </div>
         <nav class="nav right">
-          <a href="/journal" aria-current="page" class="nav__link active--exact active">Journal</a>
-          <a href="/contact" class="nav__link">Say Hi!</a>
+          <g-link to="/journal" aria-current="page" class="nav__link">Journal</g-link>
+          <g-link to="/contact" class="nav__link">Say Hi!</g-link>
         </nav>
       </div>
     </header>
@@ -65,13 +67,18 @@ body {
   border-color: transparent;
   transition: border .15s;
 }
+.nav a:hover, .active {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+    transition: border .15s;
+}
 .nav a {
   color: inherit;
   text-decoration: none;
   margin: 4px 0 0 48px;
 }
 .home-link {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .logo {
   height: 1.5rem;
