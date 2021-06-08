@@ -10,8 +10,8 @@
     <div class="container">
       <div class="projects">
         <div class="project">
-          <a 
-            href="/projects/chelsea-landmark/"
+          <g-link 
+            to="/projects/chelsea-landmark/"
             class="project-link"
           >
             <img 
@@ -26,10 +26,10 @@
               <span class="category">photography</span>
               <span class="category">pink</span>
             </div>
-          </a>
+          </g-link>
         </div>
         <div class="project">
-          <a href="/projects/sunk/" class="project-link">
+          <g-link to="/projects/sunk/" class="project-link">
             <img
               alt="Pineapple"
               src="/img/pineapple.jpg"
@@ -41,10 +41,10 @@
                 <span class="category">photography</span>
                 <span class="category">blue</span>
               </div>
-            </a>
+            </g-link>
           </div>
           <div class="project">
-            <a href="/projects/3d-graff/" class="project-link">
+            <g-link to="/projects/3d-graff/" class="project-link">
               <img
                 alt="Ice Cream"
                 src="/img/icecream.jpg"
@@ -57,10 +57,10 @@
                 <span class="category">photography</span>
                 <span class="category">yellow</span>
               </div>
-            </a>
+            </g-link>
           </div>
           <div class="project">
-            <a href="/projects/ios-concept/" class="project-link">
+            <g-link to="/projects/ios-concept/" class="project-link">
             <img 
               alt="Porta400"
               src="/img/porta400.jpg"
@@ -73,7 +73,7 @@
               <span class="category">photography</span>
               <span class="category">yellow</span>
             </div>
-          </a>
+          </g-link>
         </div>
       </div>
     </div>
@@ -85,18 +85,18 @@
       </div>
       <div class="latest-journals">
         <div class="container">
-          <a href="/journal/gridsome-forestry-cms/" class="journal">
+          <g-link to="/journal/gridsome-forestry-cms/" class="journal" exact>
             <h3 class="journal-title">Gridsome with Forestry CMS</h3>
-          </a>
-          <a href="/journal/use-gridsome-vuejs/" class="journal">
+          </g-link>
+          <g-link to="/journal/use-gridsome-vuejs/" class="journal" exact>
             <h3 class="journal-title">VueJS for your next project</h3>
-          </a>
-          <a href="/journal/macos-development-environment/" class="journal">
+          </g-link>
+          <g-link to="/journal/macos-development-environment/" class="journal" exact>
             <h3 class="journal-title">macOS development environment</h3>
-          </a>
-          <a href="/journal/a-journal-entry/" class="journal">
+          </g-link>
+          <g-link to="/journal/a-journal-entry/" class="journal" exact>
             <h3 class="journal-title">About Typography</h3>
-          </a>
+          </g-link>
         </div>
       </div>
     </div>
@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -120,7 +120,7 @@ export default {
 }
 .hero {
   text-align: center;
-  width: 480px;
+  width: 640px;
   max-width: 100%;
   margin: 0 auto;
   padding: 9.8rem 0 8rem;

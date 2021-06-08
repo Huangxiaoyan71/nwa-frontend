@@ -5,7 +5,7 @@
             <h1 class="journal-header">a wise person once said...</h1>
         </div>
     </div>
-    <g-link href="/journal/gridsome-forestry-cms/" class="journal-post">
+    <g-link to="/journal/gridsome-forestry-cms/" class="journal-post">
         <div class="journal">
             <h2 class="journal-title">Gridsome with Forestry CMS</h2>
             <p class="journal-excerpt">Get up and running with Forestry CMS, a git-backed headless CMS with a slick editing interface.</p>
@@ -30,7 +30,7 @@ a {
     padding: 0 6rem;
 }
 .journal-hero {
-    padding: 10rem 0;
+    padding: 10rem 0 3rem 0;
     margin: 0 auto;
     color: #f3f3f3;
 }
@@ -44,16 +44,29 @@ h1 {
     letter-spacing: -.01em;
 }
 .journal-post {
+    width: 100%;
+    display: inline-block;
     padding: 5rem 0;
     text-align: left;
+}
+.journal-post:hover {
+    background-color: #f3f3f3;
+    height: 100px;
+}
+.journal-post:hover .journal {
+    width: 530px;
 
 }
 .journal {
-    max-width: 540px;
+    width: 540px;
     margin: 0 auto;
 }
 .journal-post > * {
     transition: transform .5s ease;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 }
 .journal-post h1, .journal-post h2 {
     margin: 0;
@@ -67,7 +80,7 @@ h1 {
     color: #2b2b2b;
 }
 p {
-    line-height: 1.5;
+    line-height: 1.4;
     font-size: 1.15rem;
 }
 </style>
