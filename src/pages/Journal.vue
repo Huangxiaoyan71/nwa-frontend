@@ -54,11 +54,11 @@ h1 {
     height: 100px;
 }
 .journal-post:hover .journal {
-    width: 530px;
+    width: 550px;
 
 }
 .journal {
-    width: 540px;
+    width: 570px;
     margin: 0 auto;
 }
 .journal-post > * {

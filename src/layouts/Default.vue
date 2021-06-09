@@ -40,7 +40,7 @@ body {
 }
 .container {
   max-width: 1200px;
-  margin: 0 30.5px;
+  margin: 0 auto;
   padding: 0 6rem;
   display: flex;
   align-items: center;

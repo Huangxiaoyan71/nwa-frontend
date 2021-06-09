@@ -113,6 +113,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  user-select: none;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
