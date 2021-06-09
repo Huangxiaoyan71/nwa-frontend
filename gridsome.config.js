@@ -19,8 +19,16 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',
         queryLimit: 1000,
-        contentTypes: ['post'],
+        contentTypes: ['post', 'articel'],
       }
     }
   ],
+  templates: {
+    StrapiPost: [
+      {
+        path: '/journal/:id',
+        component: './src/templates/Articel.vue'
+      }
+    ]
+  }
 }
