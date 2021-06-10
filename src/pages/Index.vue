@@ -9,7 +9,7 @@
     <!-- 中间文章列表 -->
     <div class="container">
       <div class="projects">
-        <div class="project">
+        <div class="project" v-for="edge in $page.posts.edges" :key="edge.node.id">
           <g-link 
             to="/projects/chelsea-landmark/"
             class="project-link"
@@ -21,57 +21,10 @@
               width="2560"
               sizes="(max-width: 2560px) 100vw, 2560px"
             />
-            <h3 class="project-title">Banana</h3>
+            <h3 class="project-title">{{edge.node.title}}</h3>
             <div class="categories">
               <span class="category">photography</span>
-              <span class="category">pink</span>
-            </div>
-          </g-link>
-        </div>
-        <div class="project">
-          <g-link to="/projects/sunk/" class="project-link">
-            <img
-              alt="Pineapple"
-              src="/img/pineapple.jpg"
-              width="2560"
-              class="thumbnail"
-            />
-              <h3 class="project-title">Pineapple</h3>
-              <div class="categories">
-                <span class="category">photography</span>
-                <span class="category">blue</span>
-              </div>
-            </g-link>
-          </div>
-          <div class="project">
-            <g-link to="/projects/3d-graff/" class="project-link">
-              <img
-                alt="Ice Cream"
-                src="/img/icecream.jpg"
-                width="2560"
-                class="thumbnail"
-                sizes="(max-width: 2560px) 100vw, 2560px"
-              />
-              <h3 class="project-title">Ice Cream</h3>
-              <div class="categories">
-                <span class="category">photography</span>
-                <span class="category">yellow</span>
-              </div>
-            </g-link>
-          </div>
-          <div class="project">
-            <g-link to="/projects/ios-concept/" class="project-link">
-            <img 
-              alt="Porta400"
-              src="/img/porta400.jpg"
-              width="2560"
-              class="thumbnail"
-              sizes="(max-width: 2560px) 100vw, 2560px"
-            />
-            <h3 class="project-title">Porta400</h3>
-            <div class="categories">
-              <span class="category">photography</span>
-              <span class="category">yellow</span>
+              <span class="category">{{ edge.node.categories }}</span>
             </div>
           </g-link>
         </div>
@@ -85,24 +38,45 @@
       </div>
       <div class="latest-journals">
         <div class="container">
-          <g-link to="/journal/gridsome-forestry-cms/" class="journal" exact>
-            <h3 class="journal-title">Gridsome with Forestry CMS</h3>
-          </g-link>
-          <g-link to="/journal/use-gridsome-vuejs/" class="journal" exact>
-            <h3 class="journal-title">VueJS for your next project</h3>
-          </g-link>
-          <g-link to="/journal/macos-development-environment/" class="journal" exact>
-            <h3 class="journal-title">macOS development environment</h3>
-          </g-link>
-          <g-link to="/journal/a-journal-entry/" class="journal" exact>
-            <h3 class="journal-title">About Typography</h3>
+          <g-link
+            v-for="edge in $page.articels.edges"
+            :key="edge.node.id"
+            :to="`/journal/${edge.node.id}`"
+            class="journal"
+            exact
+          >
+            <h3 class="journal-title">{{ edge.node.title }}</h3>
           </g-link>
         </div>
       </div>
     </div>
   </Layout>
 </template>
-
+<page-query>
+query {
+  posts: allStrapiPost {
+    edges {
+      node {
+        id
+        title
+        categories
+        image {
+          id
+          url
+        }
+      }
+    }
+  }
+  articels: allStrapiArticel {
+    edges {
+      node {
+        id
+        title
+      }
+    }
+  }
+}
+</page-query>
 <script>
 export default {
   metaInfo: {

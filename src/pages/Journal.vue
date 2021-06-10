@@ -18,6 +18,7 @@ query {
   articels: allStrapiArticel {
     edges {
       node {
+        id
         title
         subtitle
       }
