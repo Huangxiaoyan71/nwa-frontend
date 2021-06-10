@@ -5,7 +5,12 @@
             <h1 class="journal-header">a wise person once said...</h1>
         </div>
     </div>
-    <g-link to="/journal/gridsome-forestry-cms/" class="journal-post" v-for="edge in $page.articels.edges" :key="edge.node.id">
+    <g-link
+        :to="`/articel/${edge.node.id}`"
+        class="journal-post"
+        v-for="edge in $page.articels.edges"
+        :key="edge.node.id"
+    >
         <div class="journal">
             <h2 class="journal-title">{{ edge.node.title }}</h2>
             <p class="journal-excerpt">{{ edge.node.subtitle }}</p>

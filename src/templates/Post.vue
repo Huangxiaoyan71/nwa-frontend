@@ -19,38 +19,29 @@
             </div>
         </div>
         <div class="container">
-            <div class="content" v-html="md2Html($page.articel.content)" />
+            <img :src="`http://localhost:1337${$page.articel.image.url}`" alt="">
+            <div class="content" v-if="$page.articel.content" v-html="md2Html($page.articel.content)" />
         </div>
     </Layout>
 </template>
 
 <page-query>
 query ($id: ID!) {
-    articel: strapiArticel (id: $id) {
+    articel: strapiPost (id: $id) {
         id
         auth
         title
-        date
         content
-        time
+        image {
+            url
+        }
     }
 }
 </page-query>
 
 <script>
-import MarkdownIt from 'markdown-it';
-const md = new MarkdownIt();
-
 export default {
-    metaInfo: {
-        title: 'Journal'
-    },
-    name: "ArticelPage",
-    methods: {
-        md2Html (markdown) {
-            return md.render(markdown);
-        }
-    }
+    name: "PostPage",
 }
 </script>
 

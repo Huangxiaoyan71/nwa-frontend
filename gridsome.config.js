@@ -26,14 +26,14 @@ module.exports = {
   templates: {
     StrapiArticel: [
       {
-        path: '/journal/:id',
+        path: '/articel/:id',
         component: './src/templates/Articel.vue'
       }
     ],
     StrapiPost: [
       {
-        path: '/projects/:id',
-        component: './src/templates/Articel.vue'
+        path: '/post/:id',
+        component: './src/templates/Post.vue'
       }
     ]
   }

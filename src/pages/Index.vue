@@ -11,7 +11,7 @@
       <div class="projects">
         <div class="project" v-for="edge in $page.posts.edges" :key="edge.node.id">
           <g-link 
-            :to="`/projects/${edge.node.id}`"
+            :to="`/post/${edge.node.id}`"
             class="project-link"
           >
             <img 
@@ -41,7 +41,7 @@
           <g-link
             v-for="edge in $page.articels.edges"
             :key="edge.node.id"
-            :to="`/journal/${edge.node.id}`"
+            :to="`/articel/${edge.node.id}`"
             class="journal"
             exact
           >
