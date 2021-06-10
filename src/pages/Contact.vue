@@ -11,29 +11,49 @@
         <div class="sender-info">
           <div class="sender-box">
             <label for="name" class="label">Your name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" v-model="form.name" required>
           </div>
           <div class="sender-box">
             <label for="email" class="label">Your email</label>
-            <input type="email" name="email">
+            <input type="email" name="email" v-model="form.email" required>
           </div>
         </div>
         <div class="message">
           <label for="message" class="label">Message</label>
-          <textarea name="message"></textarea>
+          <textarea name="message" v-model="form.message" required></textarea>
         </div>
-        <button class="button">Submit form</button>
+        <button class="button" @click.prevent="onSubmit()">Submit</button>
       </form>
     </div>
   </Layout>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   metaInfo: {
     title: 'Contact'
   },
   name: 'ContactPage',
+  data () {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    async onSubmit () {
+      const { data } = await axios({
+        method: 'POST',
+        url: 'http://localhost:1337/contacts',
+        data: this.form
+      })
+    }
+  },
 }
 </script>
 <style scoped>

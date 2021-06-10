@@ -2,8 +2,8 @@
   <Layout>
     <!-- 顶部文字 -->
     <div class="hero">
-      <h1 class="hero-title">{{ $page.general.edges[0].node.title }}</h1>
-      <h2 class="hero-subtitle">{{ $page.general.edges[0].node.subtitle }}</h2>
+      <h1 class="hero-title">{{ general.title }}</h1>
+      <h2 class="hero-subtitle">{{ general.subtitle }}</h2>
     </div>
 
     <!-- 中间文章列表 -->
@@ -91,7 +91,12 @@ export default {
   metaInfo: {
     title: 'Portfolio'
   },
-  name: "HomePage"
+  name: "HomePage",
+  computed: {
+    general () {
+      return this.$page.general.edges[0].node
+    }
+  }
 }
 </script>
 
