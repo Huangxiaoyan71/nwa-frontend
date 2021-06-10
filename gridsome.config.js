@@ -20,6 +20,7 @@ module.exports = {
         apiURL: process.env.GRIDSOME_API_URL,
         queryLimit: 1000,
         contentTypes: ['post', 'articel'],
+        singleTypes: ['general']
       }
     }
   ],

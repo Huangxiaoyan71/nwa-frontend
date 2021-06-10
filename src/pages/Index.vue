@@ -2,8 +2,8 @@
   <Layout>
     <!-- 顶部文字 -->
     <div class="hero">
-      <h1 class="hero-title">Simplicity. Aesthetics. Value.</h1>
-      <h2 class="hero-subtitle">Hi there, I'm an independent Digital Designer &amp; Art Director focused on digital design for brands that like to have fun.</h2>
+      <h1 class="hero-title">{{ $page.general.edges[0].node.title }}</h1>
+      <h2 class="hero-subtitle">{{ $page.general.edges[0].node.subtitle }}</h2>
     </div>
 
     <!-- 中间文章列表 -->
@@ -72,6 +72,15 @@ query {
       node {
         id
         title
+      }
+    }
+  }
+  general: allStrapiGeneral {
+    edges {
+      node {
+        id
+        title
+        subtitle
       }
     }
   }

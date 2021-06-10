@@ -81,7 +81,6 @@ h1 {
 }
 .journal-post:hover {
     background-color: #f3f3f3;
-    height: 100px;
 }
 .journal-post:hover .journal {
     width: 550px;
