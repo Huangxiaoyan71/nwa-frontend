@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="container">
-            <img :src="`http://localhost:1337${$page.articel.image.url}`" alt="">
+            <img :src="`${GRIDSOME_API_URL}${$page.articel.image.url}`" alt="">
         </div>
         <div class="container">
             <div class="content" v-if="$page.articel.content" v-html="md2Html($page.articel.content)" />
@@ -33,7 +33,6 @@ query ($id: ID!) {
         id
         auth
         title
-        content
         image {
             url
         }

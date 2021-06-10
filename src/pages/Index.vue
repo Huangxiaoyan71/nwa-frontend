@@ -16,7 +16,7 @@
           >
             <img 
               alt="Banana"
-              :src="`http://localhost:1337${edge.node.image.url}`"
+              :src="`${GRIDSOME_API_URL}${edge.node.image.url}`"
               class="thumbnail"
               width="2560"
               sizes="(max-width: 2560px) 100vw, 2560px"
