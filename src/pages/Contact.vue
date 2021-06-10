@@ -32,7 +32,8 @@
 export default {
   metaInfo: {
     title: 'Contact'
-  }
+  },
+  name: 'ContactPage',
 }
 </script>
 <style scoped>

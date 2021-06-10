@@ -24,9 +24,15 @@ module.exports = {
     }
   ],
   templates: {
-    StrapiPost: [
+    StrapiArticel: [
       {
         path: '/journal/:id',
+        component: './src/templates/Articel.vue'
+      }
+    ],
+    StrapiPost: [
+      {
+        path: '/projects/:id',
         component: './src/templates/Articel.vue'
       }
     ]

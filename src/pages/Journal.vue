@@ -11,25 +11,38 @@
             <p class="journal-excerpt">{{ edge.node.subtitle }}</p>
         </div>
     </g-link>
+    <div class="container">
+        <pager :info="$page.articels.pageInfo" class="pager" />
+    </div>
   </Layout>
 </template>
 <page-query>
-query {
-  articels: allStrapiArticel {
-    edges {
-      node {
-        id
-        title
-        subtitle
-      }
+query ($page: Int) {
+    articels: allStrapiArticel (perPage: 10, page: $page) @paginate {
+        pageInfo {
+            totalPages
+            currentPage
+        }
+        edges {
+            node {
+                id
+                title
+                subtitle
+            }
+        }
     }
-  }
 }
 </page-query>
 <script>
+import { Pager } from 'gridsome';
+
 export default {
   metaInfo: {
     title: 'Journal'
+  },
+  name: 'JournalPage',
+  components: {
+      Pager
   }
 }
 </script>
@@ -94,5 +107,15 @@ h1 {
 p {
     line-height: 1.4;
     font-size: 1.15rem;
+}
+.pager {
+    text-align: right;
+}
+.pager > a{
+    color: #000;
+    padding: 0 16px;
+}
+.pager > .active {
+    border-bottom: none;
 }
 </style>

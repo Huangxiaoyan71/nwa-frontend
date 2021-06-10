@@ -11,7 +11,7 @@
       <div class="projects">
         <div class="project" v-for="edge in $page.posts.edges" :key="edge.node.id">
           <g-link 
-            to="/projects/chelsea-landmark/"
+            :to="`/projects/${edge.node.id}`"
             class="project-link"
           >
             <img 
